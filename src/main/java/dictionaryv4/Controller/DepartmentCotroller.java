@@ -41,5 +41,9 @@ public class DepartmentCotroller {
 	public Department getDepartmentByName(@PathParam("name") String name) {
 		return departmentService.getDepartmentByName(name);
 	}
+	@GetMapping("get/map")
+	public Department getDepartmentByaaa(@PathParam("name") String name) {
+		return departmentService.getDepartmentByName(name);
+	}
 	
 }
