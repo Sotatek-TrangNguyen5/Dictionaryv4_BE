@@ -8,7 +8,7 @@ import dictionaryv4.Entity.Department;
 import dictionaryv4.Service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+// test
 @RestController
 @RequestMapping(value = "departments")
 @CrossOrigin(origins = "*")
