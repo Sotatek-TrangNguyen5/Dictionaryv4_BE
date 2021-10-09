@@ -38,7 +38,7 @@ public class DepartmentCotroller {
 		departmentService.deleteDepartment(id);
 	}
 	@GetMapping("get")
-	public Department getDepartmentByName(@PathParam("name") String name) {
+	public Department getDepartmentName(@PathParam("name") String name) {
 		return departmentService.getDepartmentByName(name);
 	}
 	@GetMapping("get/map")
