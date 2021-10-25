@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value = "words")
 public class WordController {
@@ -17,7 +17,23 @@ public class WordController {
 
     @GetMapping
     public List<Word> getAllWord() {
-        System.out.printf("aaaaaaaaaaaa");
         return wordService.listWord();
+    }
+
+    @PostMapping
+    public void createNewWord(@RequestBody Word word) {
+        wordService.createWord(word);
+    }
+    @PutMapping
+    public void updateWord(@RequestBody Word word) {
+        wordService.updateWord(word);
+    }
+    @DeleteMapping(value="/{id}")
+    public void deleteWord(@PathVariable(name="id")short id,Word word) {
+        wordService.deleteWord(id);
+    }
+    @GetMapping("/findByWorldTarget")
+    public Word getDepartmentByName(@RequestParam("wordTarget") String wordTarget) {
+        return wordService.getByWordTarget(wordTarget);
     }
 }
