@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface WordRepository extends JpaRepository<Word,  Short> {
-
+    public Word findWordByWordTarget(String wordTarget);
+    public boolean existsByWordTarget(String wordTarget);
+    public void deleteWordsByWordTarget(String wordTarget);
 }
 
